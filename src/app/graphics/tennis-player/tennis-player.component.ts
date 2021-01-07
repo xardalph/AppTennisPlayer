@@ -10,16 +10,16 @@ import { TennisPlayerService } from 'src/app/services/tennis-player.service';
   styleUrls: ['./tennis-player.component.scss']
 })
 export class TennisPlayerComponent implements OnInit {
-  
-  public playersList:TennisPlayer[];
-  public cible : TennisPlayer;
+
+  public playersList: TennisPlayer[];
+  public cible: TennisPlayer;
   modify = false;
 
   @Output() selectionChanged = new EventEmitter<TennisPlayer>();
 
   // constructeurs et initialiseurs
-  constructor(private _tplayerService:TennisPlayerService) { 
-    
+  constructor(private _tplayerService: TennisPlayerService) {
+
   }
 
   ngOnInit(): void {
@@ -28,26 +28,28 @@ export class TennisPlayerComponent implements OnInit {
     this.playersList = this._tplayerService.getAllPlayer();
   }
 
+  // tslint:disable-next-line:typedef
   public changeCible(pl: TennisPlayer) {
     this.cible = pl;
     this.selectionChanged.emit(pl);
   }
+  // tslint:disable-next-line:typedef
   public onClick() {
-    this.cible.firstName = "Jim";
-    this.cible.name = "Courier";
+    this.cible.firstName = 'Jim';
+    this.cible.name = 'Courier';
     this.modify = !this.modify;
 
-    this._tplayerService.nom='je clique';
+    this._tplayerService.nom = 'je clique';
   }
-  
+
   public showText() {
     return this.modify;
   }
 
-  isSelected(pl : TennisPlayer){
-    
+  isSelected(pl: TennisPlayer){
+
     const result = pl == this.cible;
     return result;
-    
+
   }
 }
