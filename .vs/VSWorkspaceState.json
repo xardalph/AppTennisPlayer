@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\graphics",
+    "\\src\\app\\graphics\\tennis-player",
+    "\\src\\app\\graphics\\tennis-player-form",
+    "\\src\\app\\Model"
+  ],
+  "SelectedNode": "\\src\\app\\app.module.ts",
+  "PreviewInSolutionExplorer": false
+}
