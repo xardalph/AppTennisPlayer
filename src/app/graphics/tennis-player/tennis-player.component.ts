@@ -1,6 +1,7 @@
 import { StmtModifier } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { TennisPlayer } from 'src/app/Model/tennis-player';
+import {TennisPlayerService} from "../../services/tennis-player.service";
 
 @Component({
   selector: 'app-tennis-player',
@@ -11,52 +12,30 @@ export class TennisPlayerComponent implements OnInit {
 
   // propriétés
 
-  public playersList: TennisPlayer[] = [
-    {
-      id: 1,
-      name: 'Jim',
-      firstName: 'JIIIM'
-    }
-    ,
-    {
-      id: 2,
-      name: 'Pete',
-      firstName: 'PEEETE'
-    }, {
-      id: 3,
-      name: 'Pat',
-      firstName: 'PAAAT'
-    }, {
-      id: 4,
-      name: 'Stephan',
-      firstName: 'STEPHAAAN'
-    }
-  ];
-
-  public cible = this.playersList[1];
-
-
-  public player: TennisPlayer = {
-    id: 1,
-    name: 'Sampras',
-    firstName: 'Pete'
-  };
-  modify = false;
 
   // constructeurs et initialiseurs
-  constructor() { }
+  constructor(private playersList: TennisPlayerService) {}
+
+  public cible = this.playersList.playersList[1];
+
+
+  public player: TennisPlayer = (this.playersList.playersList)[1];
+  modify = false;
+
+
 
   ngOnInit(): void {
   }
 
-  public changeCible(pl: TennisPlayer) {
+
+  public  changeCible(pl: TennisPlayer): void{
     this.cible = pl;
   }
 
   // méthodes et fonctions
-  public onClick() {
-    this.player.firstName = "Jim";
-    this.player.name = "Courier";
+  public onClick(): void{
+    this.player.firstName = 'Jim';
+    this.player.name = 'Courier';
     this.modify = !this.modify;
   }
 

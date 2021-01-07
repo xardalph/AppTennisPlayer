@@ -2,13 +2,9 @@
 <p>Bonjour {{player.firstName}} {{player.name}} </p>
 
 <ul>
-  <li *ngFor="let pl of playersList" (click)="changeCible(pl)"> {{pl.name}} </li>
+  <li *ngFor="let pl of playersList.playersList" (click)="changeCible(pl)"> {{pl.name}} </li>
 </ul>
 
-<label>
-  name:
-  <input type="text" placeholder="Player name" [(ngModel)]="player.name" *ngIf="showText()" />
-</label>
 
 <label>
   name:
