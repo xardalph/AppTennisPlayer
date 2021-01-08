@@ -49,4 +49,9 @@ add(newPlayer: TennisPlayer): void{
   this.playersList.push(newPlayer);
 }
 
+update(updatedPlayer: TennisPlayer): void{
+    console.log(updatedPlayer);
+    debugger
+}
+
 }

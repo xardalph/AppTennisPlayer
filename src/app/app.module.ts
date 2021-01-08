@@ -10,6 +10,7 @@ import { PlayerDetailComponent } from './graphics/player-detail/player-detail.co
 import { PlayerListComponent } from './graphics/player-list/player-list.component';
 import { AddPlayerComponent } from './graphics/add-player/add-player.component';
 import { UpsertPlayerComponent } from './graphics/upsert-player/upsert-player.component';
+import { UpdatePlayerComponent } from './graphics/update-player/update-player.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UpsertPlayerComponent } from './graphics/upsert-player/upsert-player.co
     PlayerDetailComponent,
     PlayerListComponent,
     AddPlayerComponent,
-    UpsertPlayerComponent
+    UpsertPlayerComponent,
+    UpdatePlayerComponent
   ],
   imports: [
     BrowserModule,

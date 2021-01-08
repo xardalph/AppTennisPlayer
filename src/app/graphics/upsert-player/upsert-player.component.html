@@ -1,1 +1,12 @@
 <p>upsert-player works!</p>
+<form [formGroup]="UpsertPlayerComponent" (ngSubmit)="DoAdd()">
+  <button type="submit" >Ajouter</button>
+</form>
+
+<form [formGroup]="UpsertPlayerComponent" (ngSubmit)="DoUpdate()">
+<button type="submit" >Modifier</button>
+</form>
+<app-add-player *ngIf="shouldUpdate()"> </app-add-player>
+
+<br/><br/>
+<app-update-player></app-update-player>
