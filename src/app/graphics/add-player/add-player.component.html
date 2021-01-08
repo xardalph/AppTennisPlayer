@@ -10,6 +10,10 @@
     firstName:
     <input type="text" placeholder="Player first name" formControlName="firstName" />
   </label>
+  <label>
+    email :
+    <input type="text" placeholder="Player email"  formControlName="email"   />
+  </label>
 
   <button type="submit" [disabled]="!playerForm.valid">Valider</button>
 </form>

@@ -11,6 +11,7 @@ import { PlayerListComponent } from './graphics/player-list/player-list.componen
 import { AddPlayerComponent } from './graphics/add-player/add-player.component';
 import { UpsertPlayerComponent } from './graphics/upsert-player/upsert-player.component';
 import { UpdatePlayerComponent } from './graphics/update-player/update-player.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UpdatePlayerComponent } from './graphics/update-player/update-player.co
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

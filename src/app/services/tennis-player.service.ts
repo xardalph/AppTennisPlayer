@@ -17,17 +17,17 @@ export class TennisPlayerService {
       id: 1,
       name: 'Pete',
       firstName: 'PEEETE',
-      mail: ''
+      mail: 'ge@gefe'
     }, {
       id: 2,
       name: 'Pat',
       firstName: 'PAAAT',
-      mail: ''
+      mail: 'fed@ghie'
     }, {
       id: 3,
       name: 'Stephan',
       firstName: 'STEPHAAAN',
-      mail: ''
+      mail: 'gdesdfse@g.gfed'
     }
   ];
 
@@ -45,13 +45,16 @@ export class TennisPlayerService {
     return this.playersList;
   }
 
-add(newPlayer: TennisPlayer): void{
-  this.playersList.push(newPlayer);
-}
+  add(newPlayer: TennisPlayer): void{
+    this.playersList.push(newPlayer);
+  }
 
-update(updatedPlayer: TennisPlayer): void{
+  update(updatedPlayer: TennisPlayer): void{
     console.log(updatedPlayer);
-    debugger
-}
+
+    this.playersList[updatedPlayer.id] = updatedPlayer;
+
+
+  }
 
 }

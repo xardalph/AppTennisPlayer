@@ -1,0 +1,19 @@
+<p>update-player works!</p>
+
+<form [formGroup]="playerForm" (ngSubmit)="submit()">
+  <label>
+    Name:
+    <input type="text" placeholder="Player name"  formControlName="name"  />
+  </label>
+
+  <label>
+    First Name:
+    <input type="text" placeholder="Player FirstName"  formControlName="firstName"   />
+  </label>
+  <label>
+    email :
+    <input type="text" placeholder="Player email"  formControlName="email"   />
+  </label>
+  <button type="submit" [disabled]="!playerForm.valid" >modifier</button>
+</form>
+
