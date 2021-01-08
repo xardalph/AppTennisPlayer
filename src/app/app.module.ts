@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PlayerDetailComponent } from './graphics/player-detail/player-detail.component';
 import { PlayerListComponent } from './graphics/player-list/player-list.component';
 import { AddPlayerComponent } from './graphics/add-player/add-player.component';
+import { UpsertPlayerComponent } from './graphics/upsert-player/upsert-player.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddPlayerComponent } from './graphics/add-player/add-player.component';
     TennisPlayerFormComponent,
     PlayerDetailComponent,
     PlayerListComponent,
-    AddPlayerComponent
+    AddPlayerComponent,
+    UpsertPlayerComponent
   ],
   imports: [
     BrowserModule,
