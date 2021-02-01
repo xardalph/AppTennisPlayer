@@ -8,53 +8,65 @@ import { TennisPlayer } from '../Model/tennis-player';
 export class TennisPlayerService {
   private playersList: TennisPlayer[] = [
     {
-      id: 0,
+      id: 1,
       name: 'Jim',
       firstName: 'JIIIM',
       mail: ''
-    },
+    }
+    ,
     {
-      id: 1,
+      id: 2,
       name: 'Pete',
       firstName: 'PEEETE',
-      mail: 'ge@gefe'
-    }, {
-      id: 2,
-      name: 'Pat',
-      firstName: 'PAAAT',
-      mail: 'fed@ghie'
+      mail: ''
     }, {
       id: 3,
+      name: 'Pat',
+      firstName: 'PAAAT',
+      mail: ''
+    }, {
+      id: 4,
       name: 'Stephan',
       firstName: 'STEPHAAAN',
-      mail: 'gdesdfse@g.gfed'
+      mail: ''
+    },
+    {
+      id: 5,
+      name: 'Rapha',
+      firstName: 'Nadal',
+      mail: ''
     }
   ];
 
   public selectedPlayer: TennisPlayer;
   public nom = 'Titi';
-  constructor(private http: HttpClient) {
+  constructor(private _http: HttpClient) {
     if (this.playersList && this.playersList.length){
       this.selectedPlayer = this.playersList[0];
     }
 
   }
 
-  getAllPlayer(): TennisPlayer[]{
+  getAllPlayer(){
 
     return this.playersList;
   }
-
-  add(newPlayer: TennisPlayer): void{
-    this.playersList.push(newPlayer);
+  selectPlayer(pl: TennisPlayer) {
+    this.selectedPlayer = pl;
   }
 
-  update(updatedPlayer: TennisPlayer): void{
-    console.log(updatedPlayer);
-
-    this.playersList[updatedPlayer.id] = updatedPlayer;
-
-
+  UpdatePlayer(player: TennisPlayer) {
+    if (player.id == 0){
+      player.id = Math.max(0, ...this.playersList.map(pl => pl.id)) + 1;
+      this.playersqList.push(player);
+    }else{
+      const playerIndex = this.playersList.findIndex(pl => pl.id == player.id);
+      this.playersList[playerIndex] = player;
+    }
   }
+  get(idplayer: number): TennisPlayer {
+    return this.playersList[this.playersList.findIndex(pl => pl.id == idplayer)];
+  }
+
 
 }
