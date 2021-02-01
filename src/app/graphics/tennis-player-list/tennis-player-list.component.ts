@@ -54,7 +54,7 @@ export class TennisPlayerListComponent implements OnInit {
   /**
    * Sélection par l'interface, possible uniquement si on peut changer la sélection
    */
-  onSelectionChange(pl:TennisPlayer){
+  onSelectionChange(pl: TennisPlayer){
     if (this.canChangeSelection)
     {
       this.selectPlayer(pl);

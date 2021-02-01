@@ -39,7 +39,7 @@ export class TennisPlayerService {
   ];
 
   public selectedPlayer: TennisPlayer;
-  public nom = 'Titi';
+
   constructor(private _http: HttpClient) {
     if (this.playersList && this.playersList.length){
       this.selectedPlayer = this.playersList[0];

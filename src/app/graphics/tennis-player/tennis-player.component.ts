@@ -29,7 +29,7 @@ export class TennisPlayerComponent  {
     this.isEditing = true;
   }
   formDone(): void{
-    this.isEditing= false;
+    this.isEditing = false;
     this.onSelectionChanged(this._tplayerService.selectedPlayer);
   }
 }
